@@ -20,15 +20,17 @@ const app = express();
 dbConnect();
 
 
-/*
-This express middleware is responsible for parsing the incoming json data into req.body .It makes data available to req.body 
-*/ 
-app.use(express.json());
 
 // cors
 app.use(cors({
   origin: 'https://harvestify-frontend.vercel.app' 
 }));
+
+/*
+This express middleware is responsible for parsing the incoming json data into req.body .It makes data available to req.body 
+*/ 
+app.use(express.json());
+
 
 // user router
 app.use('/api/users', userRouter);
