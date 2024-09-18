@@ -26,7 +26,9 @@ This express middleware is responsible for parsing the incoming json data into r
 app.use(express.json());
 
 // cors
-app.use(cors()); 
+app.use(cors({
+  origin: 'https://harvestify-frontend.vercel.app' 
+}));
 
 // user router
 app.use('/api/users', userRouter);
